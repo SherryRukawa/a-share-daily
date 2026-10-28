@@ -3,15 +3,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>A股日报 | 2026-10-29早盘与2026-10-28复盘</title>
 <style>
-body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;max-width:860px;margin:0 auto;padding:24px 16px;color:#222;line-height:1.7}
-h1{font-size:26px;margin:0 0 4px} h2{font-size:20px;margin:32px 0 8px;border-bottom:2px solid #eee;padding-bottom:6px}
-.meta{color:#666;font-size:14px} table{width:100%;border-collapse:collapse;font-size:15px}
-th,td{text-align:left;padding:8px 6px;border-bottom:1px solid #eee}
-.up{color:#c00} .down{color:#080} .flat{color:#666}
-.box{background:#f7f7f7;border-radius:10px;padding:16px} .warn{background:#fff7e6;border:1px solid #f5d9a0;border-radius:10px;padding:16px}
-.small{color:#666;font-size:13px} a{color:#1658b8}
+:root{ --ink:#1a1a1a; --muted:#666; --rule:#e5e5e5; --link:#1658b8; --up:#c00; --down:#0a7a3d; --paper:#fff; --soft:#f7f7f7; }
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;max-width:760px;margin:0 auto;padding:0 16px 40px;color:var(--ink);line-height:1.75;background:var(--paper);font-variant-numeric:tabular-nums}
+nav{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--rule);padding:12px 0;display:flex;gap:16px;flex-wrap:wrap;align-items:center;z-index:10}
+nav b{font-size:17px} nav a{color:var(--ink);text-decoration:none} nav a:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+h1{font-size:30px;line-height:1.3;margin:24px 0 4px} h2{font-size:21px;margin:36px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.meta{color:var(--muted);font-size:14px} table{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--rule);white-space:nowrap}
+th{color:var(--muted);font-weight:600} .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--muted)}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:20px 0}
+.kpi div{padding:14px 10px;border-left:1px solid var(--rule)} .kpi div:first-child{border-left:none;padding-left:0}
+.kpi .name{font-size:14px;color:var(--muted)} .kpi .price{font-size:22px;font-weight:700;line-height:1.3} .kpi .chg{font-size:15px}
+.bar{display:flex;height:14px;background:#eee;margin:10px 0 6px} .bar .bup{background:var(--up)} .bar .bdown{background:var(--down)} .bar .bflat{background:#bbb}
+.box{background:var(--soft);border-left:4px solid var(--link);padding:16px 18px} .warn{background:#fff7e6;border:1px solid #f5d9a0;padding:14px 16px}
+.small{color:var(--muted);font-size:13px} a{color:var(--link)} input[type="date"]{font-size:16px;padding:6px} button{font-size:16px;padding:6px 12px;cursor:pointer}
+@media (max-width:640px){ h1{font-size:26px} .kpi{grid-template-columns:repeat(2,1fr)} .kpi div:nth-child(3){border-left:none;padding-left:0} .kpi div{border-top:1px solid var(--rule)} .kpi div:nth-child(-n+2){border-top:none} nav{gap:12px} }
+@media (prefers-reduced-motion:reduce){ *{animation:none !important;transition:none !important} }
 </style></head><body>
-<h1>A股日报</h1>
+<nav><b>A股日报</b><a href="#top">最新</a><a href="#indices">指数</a><a href="#review">复盘</a><a href="#limitup">涨停</a><a href="#morning">早盘</a><a href="../archive.html">往期归档</a></nav>
+<h1 id="top">A股日报</h1>
 <p><a href="../archive.html">往期归档</a> ｜ 按日期找往期：<input type="date" id="finddate"> <button onclick="goToDate()">找这一天</button> <span id="datemsg" class="small"></span>
 <script>
 function goToDate(){ var d = document.getElementById('finddate').value; if (!d) return;
@@ -19,25 +31,28 @@ var inArchive = window.location.pathname.indexOf('/archive/') >= 0;
 var url = inArchive ? d + '.html' : 'archive/' + d + '.html';
 fetch(url, {method: 'HEAD'}).then(function(r){ if (r.ok) { window.location.href = url; } else { document.getElementById('datemsg').textContent = '这一天没有发布，可能是周末或节假日。'; } }).catch(function(){ window.location.href = url; }); }
 </script></p>
-<p class="meta">页面日期（北京时间）：2026-10-29 ｜ 复盘交易日：2026-10-28 ｜ 生成时间（北京时间）：2026-10-29 07:52 ｜ 数据来源：AKShare（新浪指数、东财涨停池、新浪全市场行情）</p>
+<p class="meta">页面日期（北京时间）：2026-10-29 ｜ 复盘交易日：2026-10-28 ｜ 生成时间（北京时间）：2026-10-29 07:55 ｜ 数据来源：AKShare（新浪指数、东财涨停池、新浪全市场行情）</p>
 <div class="warn"><strong>先说清楚：</strong>本页只做信息整理，不构成投资建议，不推荐任何股票，不预测涨跌。表格里出现的股票，只是当天涨停池里按成交额排序的事实记录，不是买入名单。</div>
 
 <h2>一句话先看</h2>
 <p>2026-10-28收盘，全市场上涨 4156 家，下跌 1238 家，平盘 181 家，成交额约 16,417 亿元。 四大指数里，创业板指当天涨幅最大，+3.40%。 今天开盘前，重点不是追昨天涨得最多的，而是先看成交额有没有配合，再看板块能不能持续。</p>
 
-<h2>指数</h2>
-<table><tr><th>指数</th><th>收盘</th><th>涨跌</th><th>开盘</th><th>最高</th><th>最低</th></tr><tr><td>上证指数</td><td>3,681.47</td><td class='up'>▲ +0.91%</td><td>3,676.92</td><td>3,684.49</td><td>3,652.37</td></tr><tr><td>深证成指</td><td>11,473.18</td><td class='up'>▲ +2.02%</td><td>11,359.08</td><td>11,529.59</td><td>11,292.70</td></tr><tr><td>创业板指</td><td>2,634.76</td><td class='up'>▲ +3.40%</td><td>2,593.15</td><td>2,647.63</td><td>2,562.90</td></tr><tr><td>科创50</td><td>1,282.93</td><td class='up'>▲ +2.45%</td><td>1,279.90</td><td>1,297.09</td><td>1,257.96</td></tr></table>
+<div class="kpi"><div><div class='name'>上证指数</div><div class='price'>3,681.47</div><div class='chg up'>▲ +0.91%</div></div><div><div class='name'>深证成指</div><div class='price'>11,473.18</div><div class='chg up'>▲ +2.02%</div></div><div><div class='name'>创业板指</div><div class='price'>2,634.76</div><div class='chg up'>▲ +3.40%</div></div><div><div class='name'>科创50</div><div class='price'>1,282.93</div><div class='chg up'>▲ +2.45%</div></div></div>
+<div class='bar' role='img' aria-label='上涨 4156 家，下跌 1238 家，平盘 181 家'><div class='bup' style='width:74.5%'></div><div class='bdown' style='width:22.2%'></div><div class='bflat' style='width:3.2%'></div></div><p class='small'>红色是上涨家数占比，绿色是下跌家数占比，灰色是平盘。上涨 4156 家，下跌 1238 家，平盘 181 家。</p>
+
+<h2 id="indices">指数</h2>
+<div class="scroll"><table><tr><th>指数</th><th>收盘</th><th>涨跌</th><th>开盘</th><th>最高</th><th>最低</th></tr><tr><td>上证指数</td><td>3,681.47</td><td class='up'>▲ +0.91%</td><td>3,676.92</td><td>3,684.49</td><td>3,652.37</td></tr><tr><td>深证成指</td><td>11,473.18</td><td class='up'>▲ +2.02%</td><td>11,359.08</td><td>11,529.59</td><td>11,292.70</td></tr><tr><td>创业板指</td><td>2,634.76</td><td class='up'>▲ +3.40%</td><td>2,593.15</td><td>2,647.63</td><td>2,562.90</td></tr><tr><td>科创50</td><td>1,282.93</td><td class='up'>▲ +2.45%</td><td>1,279.90</td><td>1,297.09</td><td>1,257.96</td></tr></table></div>
 <p class="small">红色为上涨，绿色为下跌，这是A股常用颜色习惯。涨跌幅按收盘价相对前一交易日收盘价计算。</p>
 
-<h2>2026-10-28复盘：发生了什么</h2>
+<h2 id="review">2026-10-28复盘：发生了什么</h2>
 <p>东财涨停池共 72 家，其中连板2板及以上 8 家，3板及以上 3 家。涨停家数最多的行业是 汽车零部 11 家、通用设备 8 家、专用设备 5 家、元件 3 家、半导体 3 家。</p>
 <p>复盘只回答三个问题。第一，市场是普涨还是分化，看涨跌家数。第二，钱去了哪里，看涨停池的行业分布。第三，波动有多大，看涨跌停数量和跌幅居前的股票，而不是只看指数那一个数字。</p>
 
-<h2>涨停池：按成交额排序的前12家（事实记录）</h2>
-<table><tr><th>代码</th><th>名称</th><th>涨跌幅</th><th>收盘价</th><th>成交额</th><th>连板</th><th>行业</th></tr><tr><td>600601</td><td>方正科技</td><td class='up'>+10.02%</td><td>10.32</td><td>31 亿元</td><td>1 板</td><td>元件</td></tr><tr><td>300006</td><td>莱美药业</td><td class='up'>+19.95%</td><td>9.92</td><td>26 亿元</td><td>1 板</td><td>化学制药</td></tr><tr><td>300806</td><td>斯迪克</td><td class='up'>+20.00%</td><td>43.92</td><td>18 亿元</td><td>1 板</td><td>塑料</td></tr><tr><td>002636</td><td>金安国纪</td><td class='up'>+10.01%</td><td>58.59</td><td>16 亿元</td><td>1 板</td><td>元件</td></tr><tr><td>603337</td><td>杰克科技</td><td class='up'>+10.00%</td><td>48.83</td><td>16 亿元</td><td>1 板</td><td>专用设备</td></tr><tr><td>301080</td><td>百普赛斯</td><td class='up'>+20.00%</td><td>101.24</td><td>16 亿元</td><td>1 板</td><td>生物制品</td></tr><tr><td>603626</td><td>科森科技</td><td class='up'>+10.00%</td><td>27.83</td><td>14 亿元</td><td>1 板</td><td>消费电子</td></tr><tr><td>000559</td><td>万向钱潮</td><td class='up'>+10.02%</td><td>13.18</td><td>14 亿元</td><td>1 板</td><td>汽车零部</td></tr><tr><td>603533</td><td>掌阅科技</td><td class='up'>+10.01%</td><td>28.03</td><td>14 亿元</td><td>1 板</td><td>数字媒体</td></tr><tr><td>603920</td><td>世运电路</td><td class='up'>+10.00%</td><td>37.85</td><td>12 亿元</td><td>1 板</td><td>元件</td></tr><tr><td>002696</td><td>百洋股份</td><td class='up'>+10.00%</td><td>11.77</td><td>12 亿元</td><td>1 板</td><td>饲料</td></tr><tr><td>688137</td><td>近岸蛋白</td><td class='up'>+20.00%</td><td>127.20</td><td>11 亿元</td><td>1 板</td><td>生物制品</td></tr></table>
+<h2 id="limitup">涨停池：按成交额排序的前12家（事实记录）</h2>
+<div class="scroll"><table><tr><th>代码</th><th>名称</th><th>涨跌幅</th><th>收盘价</th><th>成交额</th><th>连板</th><th>行业</th></tr><tr><td>600601</td><td>方正科技</td><td class='up'>+10.02%</td><td>10.32</td><td>31 亿元</td><td>1 板</td><td>元件</td></tr><tr><td>300006</td><td>莱美药业</td><td class='up'>+19.95%</td><td>9.92</td><td>26 亿元</td><td>1 板</td><td>化学制药</td></tr><tr><td>300806</td><td>斯迪克</td><td class='up'>+20.00%</td><td>43.92</td><td>18 亿元</td><td>1 板</td><td>塑料</td></tr><tr><td>002636</td><td>金安国纪</td><td class='up'>+10.01%</td><td>58.59</td><td>16 亿元</td><td>1 板</td><td>元件</td></tr><tr><td>603337</td><td>杰克科技</td><td class='up'>+10.00%</td><td>48.83</td><td>16 亿元</td><td>1 板</td><td>专用设备</td></tr><tr><td>301080</td><td>百普赛斯</td><td class='up'>+20.00%</td><td>101.24</td><td>16 亿元</td><td>1 板</td><td>生物制品</td></tr><tr><td>603626</td><td>科森科技</td><td class='up'>+10.00%</td><td>27.83</td><td>14 亿元</td><td>1 板</td><td>消费电子</td></tr><tr><td>000559</td><td>万向钱潮</td><td class='up'>+10.02%</td><td>13.18</td><td>14 亿元</td><td>1 板</td><td>汽车零部</td></tr><tr><td>603533</td><td>掌阅科技</td><td class='up'>+10.01%</td><td>28.03</td><td>14 亿元</td><td>1 板</td><td>数字媒体</td></tr><tr><td>603920</td><td>世运电路</td><td class='up'>+10.00%</td><td>37.85</td><td>12 亿元</td><td>1 板</td><td>元件</td></tr><tr><td>002696</td><td>百洋股份</td><td class='up'>+10.00%</td><td>11.77</td><td>12 亿元</td><td>1 板</td><td>饲料</td></tr><tr><td>688137</td><td>近岸蛋白</td><td class='up'>+20.00%</td><td>127.20</td><td>11 亿元</td><td>1 板</td><td>生物制品</td></tr></table></div>
 <p class="small">“连板”指连续涨停天数。涨停池口径来自东财，与全市场涨幅超过9.9%的家数口径不同，两者数字对不上是正常的，不要直接比较。</p>
 
-<h2>今天开盘前看什么</h2>
+<h2 id="morning">今天开盘前看什么</h2>
 <ul>
 <li>集合竞价：开盘价相对昨天收盘是高开还是低开，量有没有放大。</li>
 <li>板块持续性：昨天涨停最多的行业，今天开盘是继续强还是快速分化。</li>
