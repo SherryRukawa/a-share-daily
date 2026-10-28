@@ -12,7 +12,14 @@ th,td{text-align:left;padding:8px 6px;border-bottom:1px solid #eee}
 .small{color:#666;font-size:13px} a{color:#1658b8}
 </style></head><body>
 <h1>A股日报</h1>
-<p class="meta">页面日期（北京时间）：2026-10-29 ｜ 复盘交易日：2026-10-28 ｜ 生成时间（北京时间）：2026-10-29 07:47 ｜ 数据来源：AKShare（新浪指数、东财涨停池、新浪全市场行情）</p>
+<p><a href="../archive.html">往期归档</a> ｜ 按日期找往期：<input type="date" id="finddate"> <button onclick="goToDate()">找这一天</button> <span id="datemsg" class="small"></span>
+<script>
+function goToDate(){ var d = document.getElementById('finddate').value; if (!d) return;
+var inArchive = window.location.pathname.indexOf('/archive/') >= 0;
+var url = inArchive ? d + '.html' : 'archive/' + d + '.html';
+fetch(url, {method: 'HEAD'}).then(function(r){ if (r.ok) { window.location.href = url; } else { document.getElementById('datemsg').textContent = '这一天没有发布，可能是周末或节假日。'; } }).catch(function(){ window.location.href = url; }); }
+</script></p>
+<p class="meta">页面日期（北京时间）：2026-10-29 ｜ 复盘交易日：2026-10-28 ｜ 生成时间（北京时间）：2026-10-29 07:52 ｜ 数据来源：AKShare（新浪指数、东财涨停池、新浪全市场行情）</p>
 <div class="warn"><strong>先说清楚：</strong>本页只做信息整理，不构成投资建议，不推荐任何股票，不预测涨跌。表格里出现的股票，只是当天涨停池里按成交额排序的事实记录，不是买入名单。</div>
 
 <h2>一句话先看</h2>
@@ -48,5 +55,5 @@ th,td{text-align:left;padding:8px 6px;border-bottom:1px solid #eee}
 
 <h2>数据与免责</h2>
 <p class="small">数据来自公开行情接口，免费接口可能延迟或偶尔取不到，取不到的字段本页会直接写明，不会用估计数补。市场有风险，信息整理不等于投资建议，任何买卖决定请以你自己的判断和持牌顾问意见为准。历史表现不代表未来表现。</p>
-<p class="small">归档：每天一页，最新一页始终是本页。上一交易日复盘数据以收盘后接口为准。</p>
+<p class="small">归档：每天一页，最新一页始终是本页，往期在<a href="../archive.html">往期归档</a>里按日期从新到旧排列，也可以在页面顶部选一个日期直接找那一天。上一交易日复盘数据以收盘后接口为准。</p>
 </body></html>
