@@ -15,6 +15,6 @@ var url = 'archive/' + d + '.html';
 fetch(url, {method: 'HEAD'}).then(function(r){ if (r.ok) { window.location.href = url; } else { document.getElementById('datemsg').textContent = '这一天没有发布，可能是周末或节假日。'; } }).catch(function(){ window.location.href = url; }); }
 </script></p>
 <p class="small">日期是北京时间的页面日期，不是复盘交易日。周末和节假日不发布，所以有的日期在列表里找不到，是正常的。</p>
-<table><tr><th>页面日期</th><th>内容摘要</th></tr><tr><td><a href="archive/2026-10-29.html">2026-10-29</a></td><td>复盘 2026-10-29 ｜ 上证 -0.82%，创业板 +3.40% ｜ 涨停池 39 家</td></tr></table>
+<table><tr><th>页面日期</th><th>内容摘要</th></tr><tr><td><a href="archive/2026-10-30.html">2026-10-30</a></td><td>复盘 2026-10-29 ｜ 上证 -0.82%，创业板 -4.45% ｜ 涨停池 39 家</td></tr><tr><td><a href="archive/2026-10-29.html">2026-10-29</a></td><td>复盘 2026-10-29 ｜ 上证 -0.82%，创业板 +3.40% ｜ 涨停池 39 家</td></tr></table>
 <p class="small">也可以直接用网址找某一天：在本站地址后面加 archive/日期.html，例如 archive/2026-10-29.html。</p>
 </body></html>
