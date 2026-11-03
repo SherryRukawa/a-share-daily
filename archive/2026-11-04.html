@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A股日报 | 2026-11-04早盘与2026-11-03复盘</title>
+<style>
+:root{ --ink:#1a1a1a; --muted:#666; --rule:#e5e5e5; --link:#1658b8; --up:#c00; --down:#0a7a3d; --paper:#fff; --soft:#f7f7f7; }
+*{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;max-width:760px;margin:0 auto;padding:0 16px 40px;color:var(--ink);line-height:1.75;background:var(--paper);font-variant-numeric:tabular-nums}
+nav{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--rule);padding:12px 0;display:flex;gap:16px;flex-wrap:wrap;align-items:center;z-index:10}
+nav b{font-size:17px} nav a{color:var(--ink);text-decoration:none} nav a:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+h1{font-size:30px;line-height:1.3;margin:24px 0 4px} h2{font-size:21px;margin:36px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.meta{color:var(--muted);font-size:14px} table{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--rule);white-space:nowrap}
+th{color:var(--muted);font-weight:600} .scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.up{color:var(--up)} .down{color:var(--down)} .flat{color:var(--muted)}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin:20px 0}
+.kpi div{padding:14px 10px;border-left:1px solid var(--rule)} .kpi div:first-child{border-left:none;padding-left:0}
+.kpi .name{font-size:14px;color:var(--muted)} .kpi .price{font-size:22px;font-weight:700;line-height:1.3} .kpi .chg{font-size:15px}
+.bar{display:flex;height:14px;background:#eee;margin:10px 0 6px} .bar .bup{background:var(--up)} .bar .bdown{background:var(--down)} .bar .bflat{background:#bbb}
+.box{background:var(--soft);border-left:4px solid var(--link);padding:16px 18px} .warn{background:#fff7e6;border:1px solid #f5d9a0;padding:14px 16px}
+.small{color:var(--muted);font-size:13px} a{color:var(--link)} input[type="date"]{font-size:16px;padding:6px} button{font-size:16px;padding:6px 12px;cursor:pointer}
+@media (max-width:640px){ h1{font-size:26px} .kpi{grid-template-columns:repeat(2,1fr)} .kpi div:nth-child(3){border-left:none;padding-left:0} .kpi div{border-top:1px solid var(--rule)} .kpi div:nth-child(-n+2){border-top:none} nav{gap:12px} }
+@media (prefers-reduced-motion:reduce){ *{animation:none !important;transition:none !important} }
+</style></head><body>
+<nav><b>A股日报</b><a href="#top">最新</a><a href="#indices">指数</a><a href="#review">复盘</a><a href="#limitup">涨停</a><a href="#morning">早盘</a><a href="../archive.html">往期归档</a></nav>
+<h1 id="top">A股日报</h1>
+<p><a href="../archive.html">往期归档</a> ｜ 按日期找往期：<input type="date" id="finddate"> <button onclick="goToDate()">找这一天</button> <span id="datemsg" class="small"></span>
+<script>
+function goToDate(){ var d = document.getElementById('finddate').value; if (!d) return;
+var inArchive = window.location.pathname.indexOf('/archive/') >= 0;
+var url = inArchive ? d + '.html' : 'archive/' + d + '.html';
+fetch(url, {method: 'HEAD'}).then(function(r){ if (r.ok) { window.location.href = url; } else { document.getElementById('datemsg').textContent = '这一天没有发布，可能是周末或节假日。'; } }).catch(function(){ window.location.href = url; }); }
+</script></p>
+<p class="meta">页面日期（北京时间）：2026-11-04 ｜ 复盘交易日：2026-11-03 ｜ 生成时间（北京时间）：2026-11-04 07:26 ｜ 数据来源：AKShare（新浪指数、东财涨停池、新浪全市场行情）</p>
+<h2>2026-11-03概况</h2>
+<p>2026-11-03收盘，全市场上涨 2107 家，下跌 3309 家，平盘 161 家，成交额约 17,147 亿元。 上证指数当天涨幅最大，-0.82%。</p>
+
+<div class="kpi"><div><div class='name'>上证指数</div><div class='price'>3,608.10</div><div class='chg down'>▼ -0.82%</div></div><div><div class='name'>深证成指</div><div class='price'>10,876.99</div><div class='chg down'>▼ -1.21%</div></div><div><div class='name'>创业板指</div><div class='price'>2,391.65</div><div class='chg down'>▼ -2.73%</div></div><div><div class='name'>科创50</div><div class='price'>1,151.28</div><div class='chg down'>▼ -3.81%</div></div></div>
+<div class='bar' role='img' aria-label='上涨 2107 家，下跌 3309 家，平盘 161 家'><div class='bup' style='width:37.8%'></div><div class='bdown' style='width:59.3%'></div><div class='bflat' style='width:2.9%'></div></div><p class='small'>上涨 2107 家，下跌 3309 家，平盘 161 家。</p>
+
+<h2 id="indices">指数</h2>
+<div class="scroll"><table><tr><th>指数</th><th>收盘</th><th>涨跌</th><th>开盘</th><th>最高</th><th>最低</th></tr><tr><td>上证指数</td><td>3,608.10</td><td class='down'>▼ -0.82%</td><td>3,624.58</td><td>3,624.58</td><td>3,580.38</td></tr><tr><td>深证成指</td><td>10,876.99</td><td class='down'>▼ -1.21%</td><td>10,934.30</td><td>11,093.06</td><td>10,810.42</td></tr><tr><td>创业板指</td><td>2,391.65</td><td class='down'>▼ -2.73%</td><td>2,429.77</td><td>2,471.90</td><td>2,376.39</td></tr><tr><td>科创50</td><td>1,151.28</td><td class='down'>▼ -3.81%</td><td>1,184.53</td><td>1,184.53</td><td>1,132.33</td></tr></table></div>
+<h2 id="review">2026-11-03涨停行业分布</h2>
+<p>东财涨停池共 48 家，其中连板2板及以上 15 家，3板及以上 3 家。涨停家数最多的行业是 电池 7 家、一般零售 4 家、游戏Ⅱ 3 家、服装家纺 3 家、饮料乳品 2 家。</p>
+<div class="scroll"><table><tr><th>行业</th><th>涨停家数</th></tr><tr><td>电池</td><td>7 家</td></tr><tr><td>一般零售</td><td>4 家</td></tr><tr><td>游戏Ⅱ</td><td>3 家</td></tr><tr><td>服装家纺</td><td>3 家</td></tr><tr><td>饮料乳品</td><td>2 家</td></tr><tr><td>电网设备</td><td>2 家</td></tr><tr><td>装修建材</td><td>2 家</td></tr><tr><td>白酒Ⅱ</td><td>1 家</td></tr></table></div>
+
+<h2 id="limitup">涨停池：按成交额排序的前12家</h2>
+<div class="scroll"><table><tr><th>代码</th><th>名称</th><th>涨跌幅</th><th>收盘价</th><th>成交额</th><th>连板</th><th>行业</th></tr><tr><td>600261</td><td>阳光照明</td><td class='up'>+10.00%</td><td>4.95</td><td>17 亿元</td><td>4 板</td><td>照明设备</td></tr><tr><td>600715</td><td>文投控股</td><td class='up'>+9.82%</td><td>2.46</td><td>16 亿元</td><td>2 板</td><td>游戏Ⅱ</td></tr><tr><td>002696</td><td>百洋股份</td><td class='up'>+9.96%</td><td>12.36</td><td>10 亿元</td><td>1 板</td><td>饲料</td></tr><tr><td>601188</td><td>龙江交通</td><td class='up'>+10.12%</td><td>3.70</td><td>9 亿元</td><td>1 板</td><td>铁路公路</td></tr><tr><td>001318</td><td>阳光乳业</td><td class='up'>+10.00%</td><td>15.84</td><td>8 亿元</td><td>1 板</td><td>饮料乳品</td></tr><tr><td>002086</td><td>东方海洋</td><td class='up'>+9.97%</td><td>3.42</td><td>8 亿元</td><td>4 板</td><td>农产品加</td></tr><tr><td>000591</td><td>太阳能</td><td class='up'>+10.07%</td><td>4.59</td><td>8 亿元</td><td>1 板</td><td>电力</td></tr><tr><td>002300</td><td>太阳电缆</td><td class='up'>+9.96%</td><td>8.72</td><td>8 亿元</td><td>1 板</td><td>电网设备</td></tr><tr><td>002580</td><td>圣阳股份</td><td class='up'>+10.02%</td><td>18.67</td><td>7 亿元</td><td>1 板</td><td>电池</td></tr><tr><td>600293</td><td>三峡新材</td><td class='up'>+9.89%</td><td>4.00</td><td>7 亿元</td><td>2 板</td><td>玻璃玻纤</td></tr><tr><td>601566</td><td>九牧王</td><td class='up'>+10.00%</td><td>11.55</td><td>6 亿元</td><td>1 板</td><td>服装家纺</td></tr><tr><td>002292</td><td>奥飞娱乐</td><td class='up'>+9.99%</td><td>9.58</td><td>5 亿元</td><td>2 板</td><td>文娱用品</td></tr></table></div>
+<p class="small">涨停池口径来自东财，与全市场涨幅超过9.9%的家数口径不同。</p>
+
+<h2 id="morning">连板股：2板及以上</h2>
+<div class="scroll"><table><tr><th>代码</th><th>名称</th><th>连板</th><th>首次封板</th><th>成交额</th><th>炸板次数</th><th>行业</th></tr><tr><td>600261</td><td>阳光照明</td><td>4 板</td><td>092502</td><td>17 亿元</td><td>5 次</td><td>照明设备</td></tr><tr><td>002086</td><td>东方海洋</td><td>4 板</td><td>092500</td><td>8 亿元</td><td>3 次</td><td>农产品加</td></tr><tr><td>000995</td><td>皇台酒业</td><td>3 板</td><td>092500</td><td>1 亿元</td><td>0 次</td><td>白酒Ⅱ</td></tr><tr><td>600715</td><td>文投控股</td><td>2 板</td><td>101309</td><td>16 亿元</td><td>10 次</td><td>游戏Ⅱ</td></tr><tr><td>600293</td><td>三峡新材</td><td>2 板</td><td>095424</td><td>7 亿元</td><td>1 次</td><td>玻璃玻纤</td></tr><tr><td>002292</td><td>奥飞娱乐</td><td>2 板</td><td>093009</td><td>5 亿元</td><td>1 次</td><td>文娱用品</td></tr><tr><td>002029</td><td>七 匹 狼</td><td>2 板</td><td>093224</td><td>4 亿元</td><td>0 次</td><td>服装家纺</td></tr><tr><td>603258</td><td>电魂网络</td><td>2 板</td><td>092502</td><td>3 亿元</td><td>1 次</td><td>游戏Ⅱ</td></tr><tr><td>002578</td><td>闽发铝业</td><td>2 板</td><td>130003</td><td>3 亿元</td><td>1 次</td><td>工业金属</td></tr><tr><td>002058</td><td>紫竹高科</td><td>2 板</td><td>094848</td><td>3 亿元</td><td>0 次</td><td>电池</td></tr><tr><td>000599</td><td>青岛双星</td><td>2 板</td><td>094333</td><td>2 亿元</td><td>0 次</td><td>汽车零部</td></tr><tr><td>601599</td><td>浙文影业</td><td>2 板</td><td>092500</td><td>1 亿元</td><td>0 次</td><td>纺织制造</td></tr><tr><td>605577</td><td>龙版传媒</td><td>2 板</td><td>092502</td><td>1 亿元</td><td>0 次</td><td>出版</td></tr><tr><td>600892</td><td>大晟文化</td><td>2 板</td><td>092500</td><td>0 亿元</td><td>0 次</td><td>游戏Ⅱ</td></tr><tr><td>002827</td><td>高争民爆</td><td>2 板</td><td>092500</td><td>0 亿元</td><td>0 次</td><td>化学制品</td></tr></table></div>
+
+<h2>拉升拆解：按首次封板时间排序的前12家</h2>
+<div class="scroll"><table><tr><th>首次封板</th><th>代码</th><th>名称</th><th>连板</th><th>成交额</th><th>炸板次数</th><th>行业</th></tr><tr><td>092500</td><td>002086</td><td>东方海洋</td><td>4 板</td><td>8 亿元</td><td>3 次</td><td>农产品加</td></tr><tr><td>092500</td><td>601599</td><td>浙文影业</td><td>2 板</td><td>1 亿元</td><td>0 次</td><td>纺织制造</td></tr><tr><td>092500</td><td>000995</td><td>皇台酒业</td><td>3 板</td><td>1 亿元</td><td>0 次</td><td>白酒Ⅱ</td></tr><tr><td>092500</td><td>600892</td><td>大晟文化</td><td>2 板</td><td>0 亿元</td><td>0 次</td><td>游戏Ⅱ</td></tr><tr><td>092500</td><td>002827</td><td>高争民爆</td><td>2 板</td><td>0 亿元</td><td>0 次</td><td>化学制品</td></tr><tr><td>092501</td><td>603289</td><td>泰瑞机器</td><td>1 板</td><td>0 亿元</td><td>0 次</td><td>专用设备</td></tr><tr><td>092501</td><td>605388</td><td>均瑶健康</td><td>1 板</td><td>0 亿元</td><td>0 次</td><td>饮料乳品</td></tr><tr><td>092502</td><td>600261</td><td>阳光照明</td><td>4 板</td><td>17 亿元</td><td>5 次</td><td>照明设备</td></tr><tr><td>092502</td><td>603258</td><td>电魂网络</td><td>2 板</td><td>3 亿元</td><td>1 次</td><td>游戏Ⅱ</td></tr><tr><td>092502</td><td>605577</td><td>龙版传媒</td><td>2 板</td><td>1 亿元</td><td>0 次</td><td>出版</td></tr><tr><td>093000</td><td>002692</td><td>远程股份</td><td>1 板</td><td>0 亿元</td><td>0 次</td><td>电网设备</td></tr><tr><td>093009</td><td>002292</td><td>奥飞娱乐</td><td>2 板</td><td>5 亿元</td><td>1 次</td><td>文娱用品</td></tr></table></div>
+
+<h2>跌幅居前10家</h2>
+<div class="scroll"><table><tr><th>代码</th><th>名称</th><th>涨跌幅</th><th>收盘价</th><th>成交额</th></tr><tr><td>bj920045</td><td>蘅东光</td><td class='down'>-23.15%</td><td>300.50</td><td>10 亿元</td></tr><tr><td>sh688130</td><td>晶华微</td><td class='down'>-20.02%</td><td>15.42</td><td>0 亿元</td></tr><tr><td>sz301428</td><td>世纪恒通</td><td class='down'>-20.00%</td><td>30.96</td><td>11 亿元</td></tr><tr><td>sh688669</td><td>聚石化学</td><td class='down'>-20.00%</td><td>41.17</td><td>2 亿元</td></tr><tr><td>sh688613</td><td>奥精医疗</td><td class='down'>-19.97%</td><td>10.90</td><td>0 亿元</td></tr><tr><td>sz301080</td><td>百普赛斯</td><td class='down'>-19.70%</td><td>81.56</td><td>19 亿元</td></tr><tr><td>bj920220</td><td>朗信电气</td><td class='down'>-17.54%</td><td>45.43</td><td>2 亿元</td></tr><tr><td>sz301209</td><td>联合化学</td><td class='down'>-16.76%</td><td>37.01</td><td>2 亿元</td></tr><tr><td>sz301196</td><td>唯科科技</td><td class='down'>-16.00%</td><td>57.10</td><td>8 亿元</td></tr><tr><td>sh688025</td><td>杰普特</td><td class='down'>-14.92%</td><td>281.47</td><td>16 亿元</td></tr></table></div>
+
+<h2>昨日连板今日追踪</h2>
+<p>2026-11-02的连板股共 11 家，在2026-11-03继续涨停 3 家，上涨 6 家。</p>
+<div class="scroll"><table><tr><th>代码</th><th>名称</th><th>当日连板</th><th>次日涨跌幅</th><th>收盘价</th><th>行业</th></tr><tr><td>000525</td><td>红太阳</td><td>2 板</td><td class='up'>+1.62%</td><td>5.02</td><td>农化制品</td></tr><tr><td>002086</td><td>东方海洋</td><td>3 板</td><td class='up'>+9.97%</td><td>3.42</td><td>农产品加</td></tr><tr><td>002275</td><td>桂林三金</td><td>3 板</td><td class='down'>-4.13%</td><td>15.80</td><td>中药Ⅱ</td></tr><tr><td>600261</td><td>阳光照明</td><td>3 板</td><td class='up'>+10.00%</td><td>4.95</td><td>照明设备</td></tr><tr><td>000995</td><td>皇台酒业</td><td>2 板</td><td class='up'>+10.00%</td><td>17.16</td><td>白酒Ⅱ</td></tr><tr><td>002172</td><td>澳洋健康</td><td>4 板</td><td class='up'>+4.62%</td><td>6.80</td><td>医疗服务</td></tr><tr><td>000410</td><td>沈阳机床</td><td>2 板</td><td class='down'>-1.35%</td><td>5.83</td><td>通用设备</td></tr><tr><td>600189</td><td>泉阳泉</td><td>2 板</td><td class='down'>-3.29%</td><td>9.40</td><td>饮料乳品</td></tr><tr><td>000417</td><td>合百集团</td><td>2 板</td><td class='down'>-4.94%</td><td>5.96</td><td>一般零售</td></tr><tr><td>603587</td><td>地素时尚</td><td>2 板</td><td class='down'>-2.04%</td><td>13.90</td><td>服装家纺</td></tr><tr><td>001219</td><td>青岛食品</td><td>6 板</td><td class='up'>+0.14%</td><td>21.96</td><td>休闲食品</td></tr></table></div>
+
+<h2>龙虎榜：按净买额排序的前8家</h2>
+<div class="scroll"><table><tr><th>代码</th><th>名称</th><th>涨跌幅</th><th>净买额</th><th>买入额</th><th>卖出额</th><th>上榜原因</th></tr><tr><td>603186</td><td>华正新材</td><td class='down'>-10.00%</td><td>2 亿元</td><td>6 亿元</td><td>4 亿元</td><td>有价格涨跌幅限制的日收盘价格跌幅偏离值达</td></tr><tr><td>000591</td><td>太阳能</td><td class='up'>+10.07%</td><td>2 亿元</td><td>3 亿元</td><td>1 亿元</td><td>日涨幅偏离值达到7%的前5只证券</td></tr><tr><td>002696</td><td>百洋股份</td><td class='up'>+9.96%</td><td>2 亿元</td><td>3 亿元</td><td>1 亿元</td><td>日涨幅偏离值达到7%的前5只证券</td></tr><tr><td>002292</td><td>奥飞娱乐</td><td class='up'>+9.99%</td><td>2 亿元</td><td>3 亿元</td><td>1 亿元</td><td>连续三个交易日内，涨幅偏离值累计达到20</td></tr><tr><td>001381</td><td>皇冠新材</td><td class='up'>+397.94%</td><td>2 亿元</td><td>2 亿元</td><td>1 亿元</td><td>无价格涨跌幅限制的证券</td></tr><tr><td>002343</td><td>慈文传媒</td><td class='up'>+5.60%</td><td>1 亿元</td><td>3 亿元</td><td>2 亿元</td><td>日换手率达到20%的前5只证券</td></tr><tr><td>300739</td><td>明阳电路</td><td class='up'>+12.46%</td><td>1 亿元</td><td>7 亿元</td><td>6 亿元</td><td>连续三个交易日内，涨幅偏离值累计达到30</td></tr><tr><td>003032</td><td>传智教育</td><td class='down'>-6.06%</td><td>1 亿元</td><td>2 亿元</td><td>1 亿元</td><td>日换手率达到20%的前5只证券</td></tr></table></div>
+
+<h2>资金</h2>
+<p>两融余额（沪+深，2026-11-02）23,233 亿元，较上一交易日-124 亿元。</p>
+<p class="small">北向资金日度净买额：东财接口本轮返回为0，与2024年后披露口径变化有关，无法作为有效数字，本页不列出，改列两融余额。</p>
+
+<h2>隔夜市场</h2>
+<div class="scroll"><table><tr><th>市场</th><th>收盘/水平</th><th>涨跌幅</th><th>说明</th></tr><tr><td>道琼斯</td><td>51,786.72</td><td class='down'>-0.38%</td><td>美股收盘</td></tr><tr><td>纳斯达克</td><td>25,372.01</td><td class='up'>+0.83%</td><td>美股收盘</td></tr><tr><td>标普500</td><td>7,568.92</td><td class='up'>+0.36%</td><td>美股收盘</td></tr><tr><td>日经225</td><td>63,081.86</td><td class='down'>-0.33%</td><td>收盘 2026-11-02</td></tr><tr><td>恒生指数</td><td>23,525.97</td><td class='up'>+0.57%</td><td>港股收盘</td></tr><tr><td>在岸人民币兑美元</td><td>6.67</td><td class='flat'>—</td><td>汇率水平</td></tr><tr><td>美国10年期国债收益率</td><td>4.95</td><td class='flat'>—</td><td>2026-11-03，较前日 +0.04 个百分点</td></tr></table></div>
+<p class="small">美股、恒生为上一交易日收盘，日经为上一交易日收盘，汇率和美债收益率见说明。取不到的字段本页直接写明，不用估计数补。</p>
+
+<h2>隔夜期指</h2>
+<div class="scroll"><table><tr><th>期指</th><th>最新价</th><th>涨跌幅</th></tr><tr><td>小型道指当月连续</td><td>51,858.00</td><td class='down'>-0.07%</td></tr><tr><td>小型纳指当月连续</td><td>28,473.73</td><td class='up'>+0.59%</td></tr><tr><td>小型标普当月连续</td><td>7,623.13</td><td class='up'>+0.35%</td></tr><tr><td>A50期指当月连续</td><td>12,818.00</td><td class='up'>+0.31%</td></tr><tr><td>迷你黄金</td><td>3,941.00</td><td class='up'>+0.01%</td></tr><tr><td>迷你原油</td><td>96.70</td><td class='up'>+0.62%</td></tr></table></div>
+<p class="small">以上为期指当月连续合约，生成时间见页面顶部，不是现货指数收盘价。</p>
+
+<p class="small">公开行情信息整理，仅供参考。数据来自公开行情接口，取不到的字段本页直接写明，不用估计数补。往期在<a href="../archive.html">往期归档</a>里按日期从新到旧排列，也可以在页面顶部选一个日期直接找那一天。</p>
+</body></html>
